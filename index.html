@@ -4,11 +4,39 @@
         <title>Test Page</title>
     </head>
     <body>
+        <div>
+            <h1>Liz's Page</h1>
+            <img id="kittenPic" src="https://static1.squarespace.com/static/54e8ba93e4b07c3f655b452e/t/56c2a04520c64707756f4267/1493764650017/?format=500w" alt="cat"/>
+
+        </div>
         <p>This is my awesome JavaScript code.</p>
-        <img id="kittenPic" src="http://placekitten.com/g/200/300" alt="cat"/>
-        <h1>Liz's page</h1>
+        <button id="myBtn" onclick="sayHi()">Click Me!</button>
+        <a href="http://girldevelopit.com/" id="gdiLink">Girl Develop It</a>
 
         <script>
+            // click button
+
+            function sayHi (event) {
+                alert('you clicked!');
+            };
+
+            // mouse over image
+            var image = document.getElementById("kittenPic");
+
+            var mouseHi = function (event) {
+            alert("you moused over!");
+            };
+
+            image.addEventListener("mouseover", mouseHi);
+
+            // prevent link default
+
+            var link = document.getElementById("gdiLink");
+
+            link.addEventListener("click", function(event) {
+                event.preventDefault();
+                alert('you prevented the default!')
+            });
             // for (var i = 1; i <= 12; i++) {
             //     console.log(9 * i)
             //     var answer = 9 * i
@@ -18,10 +46,10 @@
 
             // }
 
-            var faveFood = ['enchiladas', 'tacos', 'nachos', 'burritos']
-            console.log(faveFood.length)
-            faveFood.push('fajitas')
-            console.log(faveFood.length)
+            // var faveFood = ['enchiladas', 'tacos', 'nachos', 'burritos']
+            // console.log(faveFood.length)
+            // faveFood.push('fajitas')
+            // console.log(faveFood.length)
         </script>
     </body>
 </html>
